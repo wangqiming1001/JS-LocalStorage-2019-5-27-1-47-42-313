@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="result"></div>
+<p><button onclick="clickMe()" type="button">+</button></p>
+<script>
+if(!window.localStorage){
+  alert("浏览器支持localstorage");
+} else {
+	if(localStorage.clickcount == null){
+		document.getElementById("result").innerHTML = '0';
+	}else{
+		document.getElementById("result").innerHTML = localStorage.clickcount ;
+	}
+	function clickMe() {
+			if (localStorage.clickcount) {
+				localStorage.clickcount = Number(localStorage.clickcount)+1;
+			} else {
+				localStorage.clickcount = 1;
+			}
+			document.getElementById("result").innerHTML = localStorage.clickcount ;
+	}
+}
+</script>
+</body>
+</html>
